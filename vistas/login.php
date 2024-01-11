@@ -1,10 +1,10 @@
 
 <?php
 session_start();
-//use PgSql\Connection\Connection;
+use PgSql\Connection\Connection;
 
-//include_once('../Model/conexionn.php');
-//include_once '../Model/validacion.php';
+include_once('../Model/conexionn.php');
+include_once '../Model/validacion.php';
 
 ?>
 

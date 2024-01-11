@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+   
+    header("Location: vistas/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
