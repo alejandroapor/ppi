@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+   
+    header("Location: vistas/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +13,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DASHBOARD GAD</title>
+  <title>PERFIL</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION['id'])) {
+    // Si no ha iniciado sesión, redirige a la página de inicio de sesión
+    header("Location: vistas/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,13 +107,13 @@
               </a>
             </li>
 
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
+          </ul>
+        </li>
 
       </ul>
-    </nav><!-- End Icons Navigation -->
+    </nav>
 
-  </header><!-- End Header -->
+  </header>
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
@@ -115,86 +125,7 @@
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
-
-      <!--li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Compras</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Buttons</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-carousel.html">
-              <i class="bi bi-circle"></i><span>Carousel</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-list-group.html">
-              <i class="bi bi-circle"></i><span>List group</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-modal.html">
-              <i class="bi bi-circle"></i><span>Modal</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tabs.html">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-pagination.html">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-progress.html">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-spinners.html">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tooltips.html">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
-            </a>
-          </li>
-        </ul>
-      </li--><!-- End Components Nav -->
-
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-text"></i><span>Bodega</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -202,24 +133,24 @@
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="forms-elements.php">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
+              <i class="bi bi-circle"></i><span>Productos CPC</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            <a href="forms-layouts.php">
+              <i class="bi bi-circle"></i><span>Productos Bodega</span>
             </a>
           </li>
-          <li>
+          <!--li>
             <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
+              <i class="bi bi-circle"></i><span>Ingreso por orden</span>
             </a>
           </li>
           <li>
             <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
+              <i class="bi bi-circle"></i><span>Egreso de productos</span>
             </a>
-          </li>
+          </li-->
         </ul>
       </li><!-- End Forms Nav -->
 
@@ -229,22 +160,22 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="tables-general.html">
+            <a href="proveedore.php">
               <i class="bi bi-circle"></i><span>Proveedores</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a href="productosProvee.php">
               <i class="bi bi-circle"></i><span>Productos Proveedores</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a href="personal.php">
               <i class="bi bi-circle"></i><span>Personal</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a href="cargos.php">
               <i class="bi bi-circle"></i><span>Cargos</span>
             </a>
           </li>
@@ -325,48 +256,20 @@
         </a>
       </li><!-- End Profile Page Nav -->
 
-      <!--li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.php">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li--><!-- End F.A.Q Page Nav -->
-
-      <!--li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bi bi-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </li--><!-- End Contact Page Nav -->
-
-      <!--li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li--><!-- End Register Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="Model/cerrar_session.php">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
       </li><!-- End Login Page Nav -->
 
-      <!--li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="pages-error-404.html">
           <i class="bi bi-dash-circle"></i>
           <span>Error 404</span>
         </a>
-      </li--><!-- End Error 404 Page Nav -->
-
-      <!--li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
-        </a>
-      </li-->
-
+      </li><!-- End Error 404 Page Nav -->
     </ul>
 
   </aside>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION['id'])) {
+    // Si no ha iniciado sesión, redirige a la página de inicio de sesión
+    header("Location: vistas/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +15,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DASHBOARD GAD</title>
+  <title>DASHBOARD</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -168,14 +178,10 @@
 
   </main><!-- End #main -->
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>GAD Parroquial Palmales</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </footer><!-- End Footer -->
+  <?php
+  include 'vistas/footer.php';
+  ?>
+  <!-- End Footer -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
