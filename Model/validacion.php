@@ -1,5 +1,4 @@
 <?php
-// Mueve cualquier salida o contenido HTML antes de este punto
 
 if (!empty($_POST["btningresar"])) {
     if (!empty($_POST["usuario"]) && !empty($_POST["contrasena"])) {
@@ -54,6 +53,9 @@ if (!empty($_POST["btningresar"])) {
             }
         } catch(PDOException $e) {
             echo "Error: " . $e->getMessage();
+        }
+        finally {
+            $conexion = null; // cerrar la conexión
         }
     }
 }

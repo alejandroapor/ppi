@@ -8,39 +8,6 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Gad Palmales</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="img/escudo_are.png" rel="icon">
-  <link href="img/escudo_are.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-  <link href="assets/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-
   <!-- ======= Header ======= -->
  <?php
  include 'vistas/header.php'
@@ -48,12 +15,12 @@ if (!isset($_SESSION['id'])) {
 
   <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Data Tables</h1>
+      <h1>Productos Bodega</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">Data</li>
+          <li class="breadcrumb-item">Bodega</li>
+          <li class="breadcrumb-item active">Productos Bodega</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -64,8 +31,6 @@ if (!isset($_SESSION['id'])) {
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Datatables</h5>
-              <p>Producto</p>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -157,7 +122,5 @@ if (!isset($_SESSION['id'])) {
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
-</body>
 
 </html>
