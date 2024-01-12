@@ -1,9 +1,8 @@
 <?php
-session_start();
-
-// Verifica si el usuario ha iniciado sesión
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 if (!isset($_SESSION['id'])) {
-    // Si no ha iniciado sesión, redirige a la página de inicio de sesión
     header("Location: vistas/login.php");
     exit();
 }
@@ -15,7 +14,7 @@ if (!isset($_SESSION['id'])) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DASHBOARD GAD</title>
+  <title>GPP</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -101,7 +100,7 @@ if (!isset($_SESSION['id'])) {
             </li-->
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="vistas/login.php">
+              <a class="dropdown-item d-flex align-items-center" href="Model/cerrar_session.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>

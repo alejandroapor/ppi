@@ -19,9 +19,12 @@ try {
 
 
 } catch (PDOException $e) {
-    echo "Error al conectar a la base de datos: " . $e->getMessage();
-    die();
+    // Log de errores
+    error_log("Error al conectar a la base de datos: " . $e->getMessage());
 
+    // Mensaje genérico al usuario
+    echo "Error al conectar a la base de datos. Por favor, inténtelo nuevamente más tarde.";
+    die();
 }
 return $conn;
 

@@ -1,9 +1,8 @@
 <?php
-session_start();
-
-// Verifica si el usuario ha iniciado sesión
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 if (!isset($_SESSION['id'])) {
-    // Si no ha iniciado sesión, redirige a la página de inicio de sesión
     header("Location: vistas/login.php");
     exit();
 }
