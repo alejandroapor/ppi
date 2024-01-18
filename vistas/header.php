@@ -1,6 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-  session_start();
+    session_start();
 }
 if (!isset($_SESSION['id'])) {
     header("Location: vistas/login.php");
@@ -25,7 +25,7 @@ if (!isset($_SESSION['id'])) {
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+  
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -33,7 +33,12 @@ if (!isset($_SESSION['id'])) {
   <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
   <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+ <!-- Agregar estas líneas en el encabezado -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.4.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -88,17 +93,6 @@ if (!isset($_SESSION['id'])) {
             <li>
               <hr class="dropdown-divider">
             </li>
-
-            <!--li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.php">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li-->
-
             <li>
               <a class="dropdown-item d-flex align-items-center" href="Model/cerrar_session.php">
                 <i class="bi bi-box-arrow-right"></i>
@@ -131,12 +125,12 @@ if (!isset($_SESSION['id'])) {
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.php">
+            <a href="productosCPC.php">
               <i class="bi bi-circle"></i><span>Productos CPC</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.php">
+            <a href="producbodega.php">
               <i class="bi bi-circle"></i><span>Productos Bodega</span>
             </a>
           </li>
@@ -187,13 +181,13 @@ if (!isset($_SESSION['id'])) {
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Pedido de catalogo</span>
+            <a href="pedidos.php">
+              <i class="bi bi-circle"></i><span>Pedido </span>
             </a>
           </li>
           <li>
             <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Pedido de Infima cuantia</span>
+              <i class="bi bi-circle"></i><span>Orden de compra</span>
             </a>
           </li>
         </ul>
@@ -207,7 +201,7 @@ if (!isset($_SESSION['id'])) {
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span></span>
+              <i class="bi bi-circle"></i><span>Informe Necesidad</span>
             </a>
           </li>
           <li>

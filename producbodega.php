@@ -7,12 +7,8 @@ if (!isset($_SESSION['id'])) {
     header("Location: vistas/login.php");
     exit();
 }
+include 'vistas/header.php'
 ?>
-  <!-- ======= Header ======= -->
- <?php
- include 'vistas/header.php'
- ?>
-
   <main id="main" class="main">
     <div class="pagetitle">
       <h1>Productos Bodega</h1>
@@ -31,9 +27,9 @@ if (!isset($_SESSION['id'])) {
 
           <div class="card">
             <div class="card-body">
-
+             <div style="overflow-x: auto; padding-top:20px;">
               <!-- Table with stripped rows -->
-              <table class="table datatable">
+              <table class="table table-striped table-bordered datatable">
                 <thead>
                   <tr>
                     <th>
@@ -54,45 +50,11 @@ if (!isset($_SESSION['id'])) {
                     <td>1999/02/07</td>
                     <td>24%</td>
                   </tr>
-                  <tr>
-                    <td>Kyra Moses</td>
-                    <td>3796</td>
-                    <td>Quenast</td>
-                    <td>1998/07/07</td>
-                    <td>68%</td>
-                  </tr>
-                  <tr>
-                    <td>Grace Bishop</td>
-                    <td>8340</td>
-                    <td>Rodez</td>
-                    <td>2012/02/10</td>
-                    <td>4%</td>
-                  </tr>
-                  <tr>
-                    <td>Haviva Hernandez</td>
-                    <td>8136</td>
-                    <td>Suwałki</td>
-                    <td>2000/30/01</td>
-                    <td>16%</td>
-                  </tr>
-                  <tr>
-                    <td>Alisa Horn</td>
-                    <td>9853</td>
-                    <td>Ucluelet</td>
-                    <td>2007/01/11</td>
-                    <td>39%</td>
-                  </tr>
-                  <tr>
-                    <td>Zelenia Roman</td>
-                    <td>7516</td>
-                    <td>Redwater</td>
-                    <td>2012/03/03</td>
-                    <td>31%</td>
-                  </tr>
+                  
                 </tbody>
               </table>
               
-
+              </div>
             </div>
           </div>
 
@@ -116,11 +78,9 @@ if (!isset($_SESSION['id'])) {
   <script src="assets/vendor/chart.js/chart.umd.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
   <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
-</html>
+  <script src="js/pedidos.js"></script>
